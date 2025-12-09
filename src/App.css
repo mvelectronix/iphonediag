@@ -1,0 +1,195 @@
+/* src/App.css */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #333;
+  min-height: 100vh;
+}
+
+.app {
+  text-align: center;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.app-header {
+  margin-bottom: 2rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.app-header p {
+  margin: 0.5rem 0 0;
+  opacity: 0.9;
+}
+
+.start-screen {
+  background: white;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.start-button {
+  background: #007aff; /* iOS blue */
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.start-button:hover {
+  background: #0056cc;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.disclaimer {
+  font-size: 0.8rem;
+  margin-top: 1.5rem;
+  opacity: 0.7;
+}
+
+.diagnostic-progress {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.progress-bar::after {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 60%;
+  background: #007aff;
+  animation: progress-pulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes progress-pulse {
+  from { width: 30%; }
+  to { width: 80%; }
+}
+
+.results-view {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timestamp {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+.results-nav {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  margin: 1.5rem 0;
+}
+
+.results-nav button {
+  background: none;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.results-nav button.active {
+  opacity: 1;
+  border-bottom: 2px solid #007aff;
+  font-weight: 600;
+}
+
+.faults-list {
+  margin-top: 1rem;
+}
+
+.fault-item {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.fault-item.severity-high { border-left: 4px solid #ff3b30; }
+.fault-item.severity-medium { border-left: 4px solid #ff9500; }
+.fault-item.severity-low { border-left: 4px solid #34c759; }
+
+.severity-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.fault-item.severity-high .severity-badge { background: #ff3b30; color: white; }
+.fault-item.severity-medium .severity-badge { background: #ff9500; color: white; }
+.fault-item.severity-low .severity-badge { background: #34c759; color: white; }
+
+.no-issues {
+  color: #34c759;
+  font-weight: 500;
+}
+
+.raw-data pre {
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.8rem;
+}
+
+.reset-button {
+  background: #8e8e93;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+}
+
+.error-panel {
+  background: #ff3b30;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+}
